@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -71,3 +72,7 @@ export default defineConfig([
   },
 ])
 ```
+=======
+# design-system
+Accessible React component library built with TypeScript, react-aria-components, and Tailwind. WCAG 2.1 AA compliant, documented with Storybook, and tested with Chromatic.
+>>>>>>> origin/main
