@@ -1,0 +1,54 @@
+import { Canvas, Controls, Meta } from '@storybook/addon-docs/blocks';
+import * as ModalStories from './Modal.stories';
+
+<Meta of={ModalStories} />
+
+# Modal
+
+A dialog overlay built on [react-aria-components `Modal` and `Dialog`](https://react-spectrum.adobe.com/react-aria/Modal.html). Traps focus, closes on Escape, and announces correctly to screen readers. Supports both `dialog` and `alertdialog` roles.
+
+## Usage
+
+```tsx
+import Modal, { ModalTrigger } from '@/components/Modal';
+import Button from '@/components/Button';
+
+<ModalTrigger>
+  <Button>Open modal</Button>
+  <Modal
+    title="Edit profile"
+    footer={
+      <>
+        <Button variant="secondary">Cancel</Button>
+        <Button>Save changes</Button>
+      </>
+    }
+  >
+    <p>Make changes to your profile here.</p>
+  </Modal>
+</ModalTrigger>
+```
+
+## Default
+
+<Canvas of={ModalStories.Default} />
+
+## Confirmation (alertdialog)
+
+Use `role="alertdialog"` and `isDismissable={false}` for destructive confirmations. This prevents dismissal by clicking the backdrop and signals urgency to screen readers.
+
+<Canvas of={ModalStories.Confirmation} />
+
+## Sizes
+
+Use `size` to control the maximum width of the modal panel.
+
+<Canvas of={ModalStories.Sizes} />
+
+## No footer
+
+<Canvas of={ModalStories.NoFooter} />
+
+## Props
+
+<Controls of={ModalStories.Default} />

@@ -1,0 +1,66 @@
+import { Canvas, Controls, Meta } from '@storybook/addon-docs/blocks';
+import * as SelectStories from './Select.stories';
+
+<Meta of={SelectStories} />
+
+# Select
+
+A dropdown select built on [react-aria-components `Select`](https://react-spectrum.adobe.com/react-aria/Select.html). The listbox opens in a `Popover` aligned to the trigger width. Supports helper text, error messages, required marking, and disabled options. Fully keyboard and screen reader accessible.
+
+## Usage
+
+```tsx
+import Select from '@/components/Select';
+
+const items = [
+  { id: 'apple', label: 'Apple' },
+  { id: 'banana', label: 'Banana' },
+];
+
+<Select
+  label="Favourite fruit"
+  placeholder="Select a fruit"
+  items={items}
+/>
+```
+
+For custom option rendering, import `SelectOption`:
+
+```tsx
+import Select, { SelectOption } from '@/components/Select';
+import type { SelectItem } from '@/components/Select';
+
+<Select label="Fruit" items={items}>
+  {(item) => <SelectOption id={item.id}>{item.label}</SelectOption>}
+</Select>
+```
+
+## Default
+
+<Canvas of={SelectStories.Default} />
+
+## Helper text
+
+<Canvas of={SelectStories.WithHelperText} />
+
+## Required
+
+<Canvas of={SelectStories.Required} />
+
+## Error state
+
+<Canvas of={SelectStories.ErrorState} />
+
+## Disabled
+
+<Canvas of={SelectStories.Disabled} />
+
+## With a disabled item
+
+Individual items can be disabled by setting `isDisabled: true` on the item object.
+
+<Canvas of={SelectStories.WithDisabledItem} />
+
+## Props
+
+<Controls of={SelectStories.Default} />

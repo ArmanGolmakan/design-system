@@ -1,0 +1,54 @@
+import { Canvas, Controls, Meta } from '@storybook/addon-docs/blocks';
+import * as TextFieldStories from './TextField.stories';
+
+<Meta of={TextFieldStories} />
+
+# TextField
+
+A labelled text input built on [react-aria-components `TextField`](https://react-spectrum.adobe.com/react-aria/TextField.html). Supports helper text, error messages, required marking, disabled, and read-only states. Fully keyboard and screen reader accessible.
+
+## Usage
+
+```tsx
+import TextField from '@/components/TextField';
+
+<TextField
+  label="Email address"
+  placeholder="you@example.com"
+  helperText="We'll never share your email."
+/>
+```
+
+## Default
+
+<Canvas of={TextFieldStories.Default} />
+
+## Helper text
+
+Use `helperText` to provide additional context below the input. The helper text is hidden when an error is shown.
+
+<Canvas of={TextFieldStories.WithHelperText} />
+
+## Required
+
+Pass `isRequired` to mark the field as required. A red asterisk is appended to the label.
+
+<Canvas of={TextFieldStories.Required} />
+
+## Error state
+
+Set `isInvalid` and `errorMessage` together to show the field in its error state. The border turns red and the error message replaces helper text.
+
+<Canvas of={TextFieldStories.ErrorState} />
+
+## Disabled
+
+<Canvas of={TextFieldStories.Disabled} />
+
+## Read-only
+
+<Canvas of={TextFieldStories.ReadOnly} />
+
+## Props
+
+<Controls of={TextFieldStories.Default} />

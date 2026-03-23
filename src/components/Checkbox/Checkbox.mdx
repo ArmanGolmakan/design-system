@@ -1,0 +1,38 @@
+import { Canvas, Controls, Meta } from '@storybook/addon-docs/blocks';
+import * as CheckboxStories from './Checkbox.stories';
+
+<Meta of={CheckboxStories} />
+
+# Checkbox
+
+A single checkbox built on [react-aria-components `Checkbox`](https://react-spectrum.adobe.com/react-aria/Checkbox.html). Supports checked and disabled states. Fully keyboard and screen reader accessible.
+
+## Usage
+
+```tsx
+import Checkbox from '@/components/Checkbox';
+
+<Checkbox defaultSelected>Accept terms and conditions</Checkbox>
+```
+
+## Default
+
+<Canvas of={CheckboxStories.Default} />
+
+## Checked
+
+<Canvas of={CheckboxStories.Checked} />
+
+## Disabled
+
+<Canvas of={CheckboxStories.Disabled} />
+
+## Group
+
+Compose multiple checkboxes to build a group. For accessible grouping, wrap in a `<fieldset>` with a `<legend>` in production.
+
+<Canvas of={CheckboxStories.Group} />
+
+## Props
+
+<Controls of={CheckboxStories.Default} />
